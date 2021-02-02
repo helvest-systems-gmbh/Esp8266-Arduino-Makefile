@@ -21,7 +21,7 @@ GREP := grep$(EXEC_EXT)
 SERIAL_PORT ?= /dev/tty.nodemcu
 ARDUINO_ARCH ?= esp8266
 ifeq ($(ARDUINO_ARCH),esp8266)
-	ESP8266_VERSION ?= 2.6.3
+	ESP8266_VERSION ?= 2.7.4
 else
 	ESP8266_VERSION ?= 1.0.4
 endif
@@ -240,6 +240,7 @@ ULIBDIRS = $(sort $(dir $(wildcard \
 	$(USER_LIBS:%=$(LOCAL_USER_LIBDIR)/%/*.c) \
 	$(USER_LIBS:%=$(LOCAL_USER_LIBDIR)/%/*.h) \
 	$(USER_LIBS:%=$(LOCAL_USER_LIBDIR)/%/src/*.c) \
+  $(USER_LIBS:%=$(LOCAL_USER_LIBDIR)/%/src/*.h) \
 	$(USER_LIBS:%=$(LOCAL_USER_LIBDIR)/%/src/*/*.c) \
 	$(USER_LIBS:%=$(LOCAL_USER_LIBDIR)/%/src/*/*/*.c) \
 	$(USER_LIBS:%=$(LOCAL_USER_LIBDIR)/%/*.cpp) \
